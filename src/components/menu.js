@@ -15,15 +15,15 @@ const menu = ({name}) => {
                 </svg>
             </Link>
             <Link to="/cart" className='flex items-center flex-row-reverse'>
-                {name == "سبد خرید" ? <h1 className='mr-2 font-bold mt-[3px]'>سبد خرید</h1> : null}
+                {name === "سبد خرید" ? <h1 className='mr-2 font-bold mt-[3px]'>سبد خرید</h1> : null}
                 <img src={Logo2} alt="logo" />
             </Link>
             <Link to="/grouping" className='flex items-center flex-row-reverse'>
-                {name == "دسته بندی" ? <h1 className='mr-2 font-bold mt-[2px]'>دسته بندی</h1> : null} 
+                {name === "دسته بندی" ? <h1 className='mr-2 font-bold mt-[2px]'>دسته بندی</h1> : null} 
                 <img src={Logo3} alt="logo" />
             </Link>
             <Link to="/" className='flex items-center flex-row-reverse'>
-                {name == "خانه" ? <h1 className='mr-2 font-bold mt-2'>خانه</h1> : null}
+                {name === "خانه" ? <h1 className='mr-2 font-bold mt-2'>خانه</h1> : null}
                 <img src={Logo4} alt="logo" />
             </Link>
         </div>

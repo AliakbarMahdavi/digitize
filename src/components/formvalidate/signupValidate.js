@@ -30,7 +30,7 @@ export const validate = (data) => {
     if(!data.ConfirmPassword ){
         error.ConfirmPassword = "پسورد را وارد کنید";
     }
-    else if(!(data.ConfirmPassword == data.Password)){
+    else if(!(data.ConfirmPassword === data.Password)){
         error.ConfirmPassword = "پسورد اشتباه است";
     }
     else{

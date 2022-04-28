@@ -9,6 +9,7 @@ const signup = () => {
     const [data, setDate] = useState({})
     const [errors, setErrors] = useState({})
     const [touch, setTouch] = useState({})
+    const [massege, setMassege] = useState(false)
 
     const clickHandler = (e) => {
         setDate({...data,[e.target.name]:e.target.value});
@@ -31,7 +32,10 @@ const signup = () => {
             ConfirmPassword:true
         })
        }else{
-        navigate("/");
+        setMassege(true)
+        setTimeout(()=>{
+         navigate("/");
+        },1000)
        }
     }
     return (
@@ -59,6 +63,7 @@ const signup = () => {
                     <button onClick={check} className='w-full h-10 bg-orange-400 text-white text-xl font-bold rounded-lg cursor-pointer'>تکمیل</button>
                     <h1 className='mt-4 mr-2'>حساب دارید ؟ <Link className="text-blue-700" to="/login">ورود</Link></h1>
                 </div>
+                {massege ? <h1 className='text-green-500 mt-6 mr-2'>با موفقیت وارد شدید</h1> : null}
             </div>
         </div>
     );

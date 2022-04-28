@@ -22,19 +22,19 @@ const grouping = () => {
         <Header name="دسته بندی"/>
             <div className='flex flex-col h-fit mt-8 mx-2 mb-16 items-center'>
                 <div className='flex items-end overflow-x-scroll pb-4'>
-                    <img className='w-36 h-[190px] cursor-pointer' src={phone} alt="image" />
-                    <img className='h-40 cursor-pointer' src={brand1} alt="image" />
-                    <img className='h-40 -mr-2 cursor-pointer' src={brand2} alt="image" />
+                    <img className='w-36 h-[190px] cursor-pointer' src={phone} alt="logos" />
+                    <img className='h-40 cursor-pointer' src={brand1} alt="logos" />
+                    <img className='h-40 -mr-2 cursor-pointer' src={brand2} alt="logos" />
                 </div> 
                 <div className='flex items-end overflow-x-scroll mt-2 pb-4'>
-                    <img className='w-36 h-[190px] cursor-pointer' src={L} alt="image" />
-                    <img className='h-40 cursor-pointer' src={brand3} alt="image" />
-                    <img className='h-40 -mr-4 cursor-pointer' src={brand4} alt="image" />
+                    <img className='w-36 h-[190px] cursor-pointer' src={L} alt="logos" />
+                    <img className='h-40 cursor-pointer' src={brand3} alt="logos" />
+                    <img className='h-40 -mr-4 cursor-pointer' src={brand4} alt="logos" />
                 </div> 
                 <div className='flex items-end overflow-x-scroll mt-2 pb-4'>
-                    <img className='w-36 h-[190px] cursor-pointer' src={wa} alt="image" />
-                    <img className='h-40 cursor-pointer' src={brand5} alt="image" />
-                    <img className='h-40 -mr-2 cursor-pointer' src={brand6} alt="image" />
+                    <img className='w-36 h-[190px] cursor-pointer' src={wa} alt="logos" />
+                    <img className='h-40 cursor-pointer' src={brand5} alt="logos" />
+                    <img className='h-40 -mr-2 cursor-pointer' src={brand6} alt="logos" />
                 </div> 
             </div>
         </div>

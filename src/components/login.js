@@ -9,6 +9,7 @@ const login = () => {
     const [data, setDate] = useState({})
     const [errors, setErrors] = useState({})
     const [touch, setTouch] = useState({})
+    const [massege, setMassege] = useState(false)
 
     const clickHandler = (e) => {
         setDate({...data,[e.target.name]:e.target.value});
@@ -29,7 +30,10 @@ const login = () => {
             Password:true
         })
        }else{
-        navigate("/");
+           setMassege(true)
+           setTimeout(()=>{
+            navigate("/");
+           },1000)
        }
     }
 
@@ -53,6 +57,7 @@ const login = () => {
                     <button onClick={check} className='w-28 h-10 bg-orange-400 text-white text-xl font-bold rounded-lg ml-6 md:ml-[70px] cursor-pointer'>ورود</button>
                     <Link to="/signup" className='w-28 h-10 border-2 flex justify-center items-center border-orange-400 text-orange-400 text-xl font-bold rounded-lg cursor-pointer'>ثبت نام</Link>
                 </div>
+                {massege ? <h1 className='text-green-500 mt-6 mr-2'>با موفقیت وارد شدید</h1> : null}
             </div>
         </div>
     );

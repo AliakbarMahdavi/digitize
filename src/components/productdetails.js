@@ -8,9 +8,7 @@ import Breadcrumb from "./details/Breadcrumb"
 import Category from "./details/category" 
 import MdMenu from './mdMenu';
 import Menu from "./menu";
-import Footer from './Footer';
 import Header from "./header"
-
 
 
 
@@ -23,10 +21,9 @@ const Productdetails = () => {
         })
     },[])
        
-    
 
     const id = useParams().id;
-    const [api, setApi] = useState(Data);
+    const [api] = useState(Data);
     const data = api[id - 1];
     const {img, name, price, brand, j, memory, description, image} = data;    
     return (
@@ -39,7 +36,6 @@ const Productdetails = () => {
                     <Category brand={brand} j={j} name={name}/>
                     <Container image={img} name={name} price={price} brand={brand} j={j} memory={memory} description={description} img={image}/>
                 </div>
-            <Footer/>
         </div>
     );
 };

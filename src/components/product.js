@@ -10,11 +10,11 @@ const Product = ({img, name, price, id}) => {
     }
 
     return (
-        <div className=' bg-white rounded-xl p-[0.40rem] shadow-lg shadow-gray-300 xl:hover:-mt-2 transition-all h-full '>
+        <div className=' bg-white rounded-xl p-[0.40rem] shadow-lg shadow-gray-300 xl:hover:-mt-2 transition-all h-fit '>
             <div className='bg-slate-200 rounded-xl flex justify-center p-4 h-36 md:h-40 lg:h-44 xl:h-52'>
                 <img src={img} alt="img" />
             </div>  
-            <div className='text-right w-full p-1 pt-4 flex justify-between'>
+            <div className='text-right w-full p-1 pt-2 flex justify-between'>
                 <h1 className='text-gray-400'>اپل</h1>
                 <div className='flex mt-[2px] flex-row-reverse relative z-0'>
                     <div onClick={CheckHandler} id="black" className={check === "black" ? "h-5 w-5 bg-black rounded-full cursor-pointer border-2 border-white  -mr-[4px] flex items-center justify-center ring-1 ring-red-400 absolute z-30" : "h-5 w-5 bg-black rounded-full cursor-pointer border-2 border-white  -mr-[4px] flex items-center justify-center absolute z-30"}>
@@ -52,12 +52,12 @@ const Product = ({img, name, price, id}) => {
                </div>
             </div>
             <div className='text-right w-full pr-1 mt-2 lg:pt-2'>
-                <h1 className='text-sm md:text-[16px]'>{name}</h1>
+                <h1 className='text-sm md:text-[16px] my-1'>{name}</h1>
             </div>
             <div className='pt-3 pb-1 md:pt-5 lg:pt-6  text-orange-500 flex justify-center'>
                 <h1 className='text-sm'>{price}T</h1>
             </div>
-            <Link to={`product/${id}`} className='text-orange-500 border-t-2 w-full h-10 pt-3 font-bold text-sm block text-center '>مشاهده و سفارش</Link>
+            <Link to={`/${id}`} className='text-orange-500 border-t-2 w-full h-10 pt-3 font-bold text-sm block text-center '>مشاهده و سفارش</Link>
         </div>
     );
 };

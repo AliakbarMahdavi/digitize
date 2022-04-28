@@ -12,23 +12,30 @@ import Notfound from "./components/notFound"
 import ProductDetails from "./components/productdetails"
 import Signup from './components/signup';
 import Grouping from './components/grouping';
+import ProductsPage from './components/productsPage';
 
+//context
+import MenuContextProvider from './components/context/menuContextProvider';
+import SortContextProvider from './components/context/sortContextProvider';
 
 const App = () => {
   return (
-    <div>
-      <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="/contactUs" element={<ContactUs/>}/>
-          <Route path='/login' element={<Login/>}/>
-          <Route path='/product/:id' element={<ProductDetails/>}/>
-          <Route path='/signup' element={<Signup/>}/>
-          <Route path='/grouping' element={<Grouping/>}/>
-          <Route path="/notfound" element={<Notfound/>}/>
-          <Route path="/*" element={<Navigate to="/notfound"/>}/>
-      </Routes>
-    </div>
+    <SortContextProvider>
+    <MenuContextProvider>
+          <Routes>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/cart" element={<Cart/>}/>
+              <Route path="/contactUs" element={<ContactUs/>}/>
+              <Route path='products' element={<ProductsPage/>}/>
+              <Route path='/login' element={<Login/>}/>
+              <Route path='/:id' element={<ProductDetails/>}/>
+              <Route path='/signup' element={<Signup/>}/>
+              <Route path='/grouping' element={<Grouping/>}/>
+              <Route path="/notfound" element={<Notfound/>}/>
+              <Route path="/*" element={<Navigate to="/notfound"/>}/>
+          </Routes>
+    </MenuContextProvider>
+    </SortContextProvider>
   );
 };
 

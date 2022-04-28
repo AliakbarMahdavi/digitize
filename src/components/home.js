@@ -9,7 +9,6 @@ import Menu from "./menu";
 import Footer from './Footer';
 
 
-
 const Home = () => {
     return (
         <div>
