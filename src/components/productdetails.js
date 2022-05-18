@@ -22,10 +22,10 @@ const Productdetails = () => {
     },[])
        
 
-    const id = useParams().id;
+    const id2 = useParams().id;
     const [api] = useState(Data);
-    const data = api[id - 1];
-    const {img, name, price, brand, j, memory, description, image} = data;    
+    const data = api[id2 - 1];
+    const {name, brand, j} = data;    
     return (
         <div>
             <Header name={name}/>
@@ -34,7 +34,7 @@ const Productdetails = () => {
                 <div className="container mx-auto max-w-screen-2xl grid md:grid-cols-12 md:grid-rows-[60px_minmax(900px,_1fr)_100px] gap-x-4 gap-y-4 mt-8 md:mt-4 ">
                     <Breadcrumb j={j}/>
                     <Category brand={brand} j={j} name={name}/>
-                    <Container image={img} name={name} price={price} brand={brand} j={j} memory={memory} description={description} img={image}/>
+                    <Container data={data}/>
                 </div>
         </div>
     );

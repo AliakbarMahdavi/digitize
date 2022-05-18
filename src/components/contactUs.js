@@ -17,8 +17,7 @@ const contactUs = () => {
     });
 
     const [err, setErr] = useState({
-        name:false,
-        email:false
+       
     });
 
     useEffect(() => {
@@ -32,18 +31,25 @@ const contactUs = () => {
         setData({...data,[e.target.name]:e.target.value})
     }
     
-    const clickHandler = () => {
+    const massege = () => {
+        const errMassege = {};
         if(data.Name.length < 1) {
-            setErr({...err, name:true})
+            errMassege.name="نام را وارد کنید*";
         }else{
-            setErr({...err, name:false})
+            delete errMassege.name;
         }
         
         if (!/\S+@\S+\.\S+/.test(data.Email)) {
-            setErr({...err, email:true})
+            errMassege.email="ایمیل معتبر نیست*";
         }else{
-            setErr({...err, email:false})
+            delete errMassege.email;
         }
+
+        return errMassege;
+    }
+
+    const clickHandler = () => {
+        setErr(massege())
     }
 
     return (
@@ -65,11 +71,11 @@ const contactUs = () => {
                 <div className='w-full md:w-[50%] flex flex-col relative'>                          
                     <h1 className='text-orange-400 text-2xl font-bold text-center md:text-right mt-10 md:mt-0'>تماس با ما</h1>
                     <label className='text-xl mt-16 md:mt-20 text-gray-500'>نام<b className='text-red-500'>*</b></label>     
-                    <input name="name" onChange={changeHandler} type="text" className='lg:w-[500px] h-14 rounded-xl mt-2 outline-none p-2 text-left'/>
-                    {err.name ? <b className='absolute top-[215px] text-sm text-red-800'>نام را وارد کنید*</b> : null}
+                    <input name="Name" onChange={changeHandler} type="text" className='text-right lg:w-[500px] h-14 rounded-xl mt-2 outline-none p-2'/>
+                    {err.name ? <h5 className='text-red-500 mt-2' >{err.name}</h5> : null}
                     <label className='text-xl mt-10 text-gray-500'>ایمیل<b className='text-red-500'>*</b></label>     
-                    <input name="email" onChange={changeHandler} type="text" className='lg:w-[500px] h-14 rounded-xl mt-2 outline-none p-2 text-left'/>
-                    {err.email ? <b className='absolute top-[345px] text-sm text-red-800'>ایمیل معتبر نیست*</b> : null}
+                    <input name="Email" onChange={changeHandler} type="text" className='lg:w-[500px] h-14 rounded-xl mt-2 outline-none p-2 text-left'/>
+                    {err.email ? <h5 className='text-red-500 mt-2' >{err.email}</h5> : null}
                     <label className='text-xl mt-10 text-gray-500'>متن خود را بنویسید<b className='text-red-500'>*</b></label>     
                     <textarea name="" id="" cols="30" rows="10" className='mt-2 lg:w-[500px] h-48 md:h-52 lg:h-64 resize-none outline-none p-2'></textarea>        
                     <button onClick={clickHandler} className='w-32 p-4 bg-orange-400 rounded-full mt-10'>ارسال</button>                                              

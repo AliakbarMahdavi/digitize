@@ -21,7 +21,6 @@ const menuContextProvider = ({children}) => {
         e.preventDefault();
         setSubmit(searchdata)
         navigate("/products")
-
     }
 
     return (

@@ -1,7 +1,7 @@
 @import url("./font.css");
 
 /*
-! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -78,8 +78,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 */
 
 abbr:where([title]) {
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
+  text-decoration: underline dotted;
 }
 
 /*
@@ -346,20 +345,6 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  opacity: 1;
-  /* 1 */
-  color: #9ca3af;
-  /* 2 */
-}
-
 input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -515,16 +500,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .sticky{
-  position: -webkit-sticky;
   position: sticky;
-}
-
-.top-\[215px\]{
-  top: 215px;
-}
-
-.top-\[345px\]{
-  top: 345px;
 }
 
 .top-0{
@@ -589,6 +565,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .right-1{
   right: 0.25rem;
+}
+
+.left-\[\]{
+  left: ;
+}
+
+.left-\[50\%\]{
+  left: 50%;
+}
+
+.left-\[60\%\]{
+  left: 60%;
+}
+
+.left-\[40\%\]{
+  left: 40%;
+}
+
+.left-\[45\%\]{
+  left: 45%;
+}
+
+.left-\[44\%\]{
+  left: 44%;
+}
+
+.top-\[44\%\]{
+  top: 44%;
+}
+
+.left-\[43\%\]{
+  left: 43%;
+}
+
+.left-\[42\%\]{
+  left: 42%;
 }
 
 .z-10{
@@ -848,8 +860,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .h-fit{
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -1030,8 +1040,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .w-fit{
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
 }
 
@@ -1108,13 +1116,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .gap-x-8{
-  -webkit-column-gap: 2rem;
-          column-gap: 2rem;
+  column-gap: 2rem;
 }
 
 .gap-x-2{
-  -webkit-column-gap: 0.5rem;
-          column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
 .gap-y-7{
@@ -1122,8 +1128,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .gap-x-4{
-  -webkit-column-gap: 1rem;
-          column-gap: 1rem;
+  column-gap: 1rem;
 }
 
 .gap-y-4{
@@ -1131,13 +1136,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .gap-x-3{
-  -webkit-column-gap: 0.75rem;
-          column-gap: 0.75rem;
+  column-gap: 0.75rem;
 }
 
 .gap-x-6{
-  -webkit-column-gap: 1.5rem;
-          column-gap: 1.5rem;
+  column-gap: 1.5rem;
 }
 
 .space-y-10 > :not([hidden]) ~ :not([hidden]){
@@ -1561,11 +1564,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
-.text-red-800{
-  --tw-text-opacity: 1;
-  color: rgb(153 27 27 / var(--tw-text-opacity));
-}
-
 .text-slate-500{
   --tw-text-opacity: 1;
   color: rgb(100 116 139 / var(--tw-text-opacity));
@@ -1649,8 +1647,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .filter{
-  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-          filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition-all{
@@ -1825,8 +1822,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .md\:h-fit{
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
   }
 
@@ -1871,8 +1866,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .md\:w-fit{
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
   }
 
@@ -1929,13 +1922,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .md\:gap-x-6{
-    -webkit-column-gap: 1.5rem;
-            column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .md\:gap-x-4{
-    -webkit-column-gap: 1rem;
-            column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .md\:rounded-none{
@@ -2102,8 +2093,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .lg\:h-fit{
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
     height: fit-content;
   }
 
@@ -2136,13 +2125,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .lg\:gap-x-12{
-    -webkit-column-gap: 3rem;
-            column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .lg\:gap-x-8{
-    -webkit-column-gap: 2rem;
-            column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .lg\:p-3{

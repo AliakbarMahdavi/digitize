@@ -55,7 +55,7 @@ const Product = ({img, name, price, id}) => {
                 <h1 className='text-sm md:text-[16px] my-1'>{name}</h1>
             </div>
             <div className='pt-3 pb-1 md:pt-5 lg:pt-6  text-orange-500 flex justify-center'>
-                <h1 className='text-sm'>{price}T</h1>
+                <h1 className='text-sm'>{price.toLocaleString()}T</h1>
             </div>
             <Link to={`/${id}`} className='text-orange-500 border-t-2 w-full h-10 pt-3 font-bold text-sm block text-center '>مشاهده و سفارش</Link>
         </div>

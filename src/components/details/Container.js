@@ -1,25 +1,34 @@
 import React, { useState } from 'react';
 
+// react-redux
+import { useDispatch } from "react-redux";
+
+// images
 import logo10 from "../../image/logo10.png"
 import cercoll from "../../image/cercoll.png"
 import shop from "../../image/shop.png"
 import shop2 from "../../image/shield.svg"
 import shop3 from "../../image/truck-time.png"
 
+import { add_item } from '../../redux/products/productsAction';
 
-const Container = ({image, name, price, brand, j, memory, description, img}) => {
+const Container = ({data}) => {
 
     const [check, setcheck] = useState("black");
+
 
     const CheckHandler = (e) => {
         setcheck(e.target.id)
     }
+    const {image, name, price, brand, j, memory, description, img} = data;
+
+    const dispatch = useDispatch();
 
     return (
         <div className='col-span-9 xl:col-span-10 bg-transparent md:bg-white rounded-md w-full px-4 lg:px-12 xl:px-10 pb-4 mb-20 md:mb-0'>
             <div className='flex flex-col md:flex-row items-center md:justify-between'>
                 <div className='flex flex-col md:flex-row mt-10 md:mt-0'>
-                    <img src={image} alt="logos" className='w-[200px] md:w-[160px] lg:w-[200px] xl:w-[250px] md:mt-8 md:h-[250px] xl:h-[290px] 2xl:h-[310px]'/>
+                    <img src={img} alt="logos" className='w-[200px] md:w-[160px] lg:w-[200px] xl:w-[250px] md:mt-8 md:h-[250px] xl:h-[290px] 2xl:h-[310px]'/>
                     <div className=' md:mr-4 lg:mr-8 xl:mr-10 lg:w-[220px] xl:w-[450px] 2xl:w-[500px]'>
                         <div className='hidden md:flex md:mt-8'>
                             <img src={logo10} alt="logo" />
@@ -79,8 +88,8 @@ const Container = ({image, name, price, brand, j, memory, description, img}) => 
                         <h1 className='flex flex-row-reverse justify-end items-center mt-5 text-slate-800 font-bold md:text-sm'> <p className='mr-2 font-normal text-sm xl:text-lg'>18 ماه زرین خدمت</p>گارانتی:<img className='w-fit h-fit ml-2 mb-1' src={shop2} alt="shop"/></h1>
                         <h1 className='flex flex-row-reverse justify-end items-center mt-5 text-slate-800 font-bold md:text-sm'> <p className='mr-2 font-normal text-sm xl:text-lg'>انبار تهران</p>ارسال توسط:<img className='w-fit h-fit ml-2 mb-1' src={shop3} alt="shop"/></h1>
                     </div>
-                    <h1 className='text-orange-400 mt-10 text-center font-bold text-xl md:mt-8 xl:mt-12 md:text-left md:ml-1 xl:ml-2'>{price} تومان</h1>
-                    <button className='bg-orange-400 w-[78%] md:w-full h-12 mt-3 rounded-lg'>اضافه به سبد خرید</button>
+                    <h1 className='text-orange-400 mt-10 text-center font-bold text-xl md:mt-8 xl:mt-12 md:text-left md:ml-1 xl:ml-2'>{price.toLocaleString()} تومان</h1>
+                    <button onClick={() => dispatch(add_item(data))} className='bg-orange-400 w-[78%] md:w-full h-12 mt-3 rounded-lg'>اضافه به سبد خرید</button>
                 </div>
                 <div className='block md:hidden w-full bg-white rounded-xl p-4 mt-16 mb-6'>
                     <h1 className='text-xl font-bold'>ویژگی های کالا:</h1>
@@ -92,11 +101,12 @@ const Container = ({image, name, price, brand, j, memory, description, img}) => 
                 <h1 className='text-slate-700 text-2xl mb-8 md:mb-0 font-bold md:font-normal'>نقد و برسی این محصول</h1>
                 <p className='md:mt-10 text-justify text-slate-700 md:text-slate-800 leading-8 '>{description}</p>
                 <div className='w-full flex justify-center'>
-                    <img src={img} alt="logos" className='mt-10'/>
+                    <img src={image} alt="logos" className='mt-10'/>
                 </div>
             </div>
         </div>
     );
 };
+
 
 export default Container;
